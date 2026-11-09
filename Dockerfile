@@ -1,8 +1,10 @@
 
 FROM php:8.3-apache
 
+
 RUN apt-get update && apt-get install -y \
-    git unzip zip libpq-dev libzip-dev \
+    git unzip zip pkg-config \
+    libpq-dev libzip-dev libonig-dev \
     libicu-dev libxml2-dev \
     && docker-php-ext-install \
     pdo_pgsql mbstring bcmath intl zip \
